@@ -550,7 +550,7 @@ print_trace(FILE *fp)
 
     free(strings);
 #else
-    (void)fp
+    (void)fp;
 #endif /* PLATFORM_HAS_EXECINFO */
 }
 
