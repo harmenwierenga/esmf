@@ -176,9 +176,9 @@ endif ()
 include(CheckTypeSize)
 check_type_size("size_t" SIZEOF_SIZE_T)
 CHECK_TYPE_SIZE("long long" SIZEOF_LONG_LONG)
-if (NOT ${SIZEOF_SIZE_T} EQUAL ${SIZEOF_LONG_LONG}
-    AND NOT "${SIZEOF_SIZE_T}" STREQUAL ""
-    AND NOT "${SIZEOF_LONG_LONG}" STREQUAL "")
+if ((NOT ${SIZEOF_SIZE_T} EQUAL ${SIZEOF_LONG_LONG})
+    AND (NOT "${SIZEOF_SIZE_T}" STREQUAL "")
+    AND (NOT "${SIZEOF_LONG_LONG}" STREQUAL ""))
   message (FATAL_ERROR "size_t and long long must be the same size!")
 endif ()
 
